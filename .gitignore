@@ -2,6 +2,6 @@
 *.pyo
 /.idea
 /venv
-/.cache.html
+/.cache
 /wahlin.log
-/wahlin.ini
+/conf/wahlin.ini

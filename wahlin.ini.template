@@ -1,9 +1,0 @@
-[LOGGER]
-log_file=wahlin.log
-
-[MAILER]
-sender=noreply@example.com
-receivers=["person1@example.com"]
-subject=New Offers By Wåhlin
-smtp_host=localhost
-smtp_port=465

@@ -1,0 +1,21 @@
+[URL_FETCHER]
+url=http://wahlinfastigheter.se/lediga-objekt/lagenhet/
+headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"}
+
+[PARSER]
+start_tag=<!-- Start lediga lägenheter -->
+end_tag=<!-- Slut lediga lägenheter -->
+empty_pattern=Just nu har vi tyvärr inga lediga lägenheter att förmedla här.
+cache_file=.cache
+
+[LOGGER]
+log_file=wahlin.log
+
+[MAILER]
+sender=noreply@example.com
+receivers=["person1@example.com"]
+subject=New Offers By Wåhlin
+smtp_host=localhost
+smtp_port=465
+smtp_user=user@example.com
+smtp_password=pass1234
