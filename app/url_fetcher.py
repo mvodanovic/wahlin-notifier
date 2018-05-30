@@ -30,7 +30,6 @@ class URLFetcher(object):
             self.content = None
             return
 
-        # noinspection PyUnboundLocalVariable
         if response.status_code >= 300:
             Logger.get(self.__class__.__name__).error('{}: {}'.format(response.status_code, response.reason))
             self.content = None

@@ -2,18 +2,20 @@
 # -*- coding: utf-8 -*-
 # vim:fileencoding=utf-8
 
-from typing import List
+from typing import Dict
 
 
 class MailTemplate(object):
-    def __init__(self, url: str, links: List[str]) -> None:
+    def __init__(self, url: str, links: Dict[str, str]) -> None:
         self.url: str = url
-        self.links: List[str] = links
+        self.links: Dict[str, str] = links
         self.template: str = None
 
     def get(self) -> str:
         if self.template is None:
-            list_prefix = "\n    *"
-            parsed_links = list_prefix + list_prefix.join(self.links)
-            self.template = "{}\n{}".format(self.url, parsed_links)
+            prefix = "\n    *"
+            parsed_links = prefix + prefix.join("{}: {}".format(name, url) for (url, name) in self.links.items())
+            self.template = "{}:\n{}".format(self.url, parsed_links)
+        print(self.template)
+        exit(0)
         return self.template
