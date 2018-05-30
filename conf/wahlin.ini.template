@@ -19,3 +19,8 @@ smtp_host=localhost
 smtp_port=465
 smtp_user=user@example.com
 smtp_password=pass1234
+
+[CRON]
+schedule=15-45/1 13 * * 1-5
+project_root=/home/user/wahlin-notifier
+log_file=cron.log

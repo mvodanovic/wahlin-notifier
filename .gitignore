@@ -4,4 +4,5 @@
 /venv
 /.cache
 /wahlin.log
+/cron.log
 /conf/wahlin.ini
