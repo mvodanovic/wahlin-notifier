@@ -1,0 +1,7 @@
+*.pyc
+*.pyo
+/.idea
+/venv
+/.cache.html
+/wahlin.log
+/wahlin.ini
