@@ -2,10 +2,17 @@
 # -*- coding: utf-8 -*-
 # vim:fileencoding=utf-8
 
+from abc import ABC, abstractmethod
 from typing import Dict
 
 
-class MailTemplate(object):
+class AbstractMailTemplate(ABC):
+    @abstractmethod
+    def get(self):
+        pass
+
+
+class MailTemplate(AbstractMailTemplate):
     def __init__(self, url: str, links: Dict[str, str]) -> None:
         self.url: str = url
         self.links: Dict[str, str] = links
@@ -16,6 +23,12 @@ class MailTemplate(object):
             prefix = "\n    *"
             parsed_links = prefix + prefix.join("{}: {}".format(name, url) for (url, name) in self.links.items())
             self.template = "{}:\n{}".format(self.url, parsed_links)
-        print(self.template)
-        exit(0)
         return self.template
+
+
+class TestMailTemplate(AbstractMailTemplate):
+    def __init__(self):
+        pass
+
+    def get(self) -> str:
+        return "This is a test email"
